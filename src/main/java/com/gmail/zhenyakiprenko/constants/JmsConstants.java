@@ -6,4 +6,5 @@ public interface JmsConstants {
 
     String URL = ActiveMQConnection.DEFAULT_BROKER_URL;
     String SUBJECT = "JCG_QUEUE";
+    int PERIOD = 5000;
 }
