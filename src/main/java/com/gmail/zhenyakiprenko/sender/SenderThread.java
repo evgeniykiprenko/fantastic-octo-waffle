@@ -1,11 +1,9 @@
 package com.gmail.zhenyakiprenko.sender;
 
 import com.gmail.zhenyakiprenko.constants.JmsConstants;
-import com.gmail.zhenyakiprenko.receiver.Receiver;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 
 

@@ -1,6 +1,7 @@
 package com.gmail.zhenyakiprenko.sender;
 
 import com.gmail.zhenyakiprenko.constants.JmsConstants;
+import com.gmail.zhenyakiprenko.util.JmsUtils;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.Connection;
@@ -16,12 +17,13 @@ public class Sender {
     public static void send(String message) {
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(JmsConstants.URL);
         Connection connection = null;
+        Session session = null;
 
         try {
             connection = connectionFactory.createConnection();
             connection.start();
 
-            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
             //Queue where to write
             Destination destination = session.createQueue(JmsConstants.SUBJECT);
@@ -34,13 +36,7 @@ public class Sender {
         } catch (JMSException e) {
             e.printStackTrace();
         } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (JMSException e) {
-                    e.printStackTrace();
-                }
-            }
+            JmsUtils.endConnection(connection, session);
         }
     }
 }
