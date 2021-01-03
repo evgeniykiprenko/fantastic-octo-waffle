@@ -5,5 +5,4 @@ The project to study message brokers (ActiveMQ).
 
 - Name: Evgeniy Kiprenko
 - Email: zhenyakiprenko@gmail.com
-- [LinkedIn](https://www.linkedin.com/in/evgeniy-kiprenko/)
-- [Telegram](https://t.me/Jus7XV)
+- [LinkedIn](https://www.linkedin.com/in/kiprenko/)
